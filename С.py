@@ -1,13 +1,20 @@
-I=open('input.txt')
-amount = int(I.readline())
-slippers = [float(x) for x in I.readline().split()]
-c = amount
-for i in range(amount):
-    for j in range(i+1, amount):
-        if slippers[j] == (-1) * slippers[i]:
-            if slippers[j] > 0:
-                c = min(c, j-i)
-O=open('output.txt','w')
-O.write(str(c))
-O.close()
+f = open('input.txt')
+N = int(f.readline())
+A = f.readline().split()
+for i in range(len(A)):
+    A[i] = int(A[i])
+min = 999
 
+for i in range(len(A) - 1):
+    for j in range(i + 1, len(A)):
+        if (A[i] == A[j]*(-1)) and (A[i] < 0):
+            x = j - i
+            if x < min:
+                min = x
+
+f = open('output.txt', 'w')
+if min == 999:
+    print(0, file = f)
+else:
+    print(min, file = f)
+f.close()    
