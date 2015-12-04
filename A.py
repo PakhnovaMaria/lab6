@@ -1,6 +1,6 @@
 f = open('input.txt')
 N = int(f.readline())
-A = f. readline().split()
+A = f.readline().split()
 for i in range(len(A)):
     A[i] = int(A[i])
     
@@ -11,4 +11,4 @@ for i in range(len(A) - 1):
             
 f = open('output. txt', 'w')
 print(x, file = f)
-f. close()
+f.close()
