@@ -13,7 +13,12 @@ for i in range(K):
         if B[1] == a:
             S[a-1] += B[2]
 
+M = str()
+for i in range(N):
+    M += str(S[i]) + ' '
+
 f = open('output.txt', 'w')
-print(S, file = f)
+print(M, file = f)
 f.close()
+
 
