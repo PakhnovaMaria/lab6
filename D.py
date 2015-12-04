@@ -1,15 +1,25 @@
-I = open('input.txt')
-O = open('output.txt', 'w')
-C = tuple(int(i) for i in I.readline().split())
-line, column = C
-temp = [[float(x) for x in I.readline().split()] for i in range (line)]
-for j in range(column):
-    min = temp[0][j]
-    for i in range(line):
-        if temp[i][j] < min:
-            min = temp[i][j]
-    O.write(str(min))
-O.close()
+f = open('input.txt')
+A = f.readline().split()
+k = int(A[0])
+n = int(A[1])
+MIN = f.readline().split()
+for i in range(n):
+    MIN[i] = int(MIN[i])
+for i in range(k - 1):
+    A = f.readline().split()
+    for i in range(n):
+        A[i] = int(A[i])
+    for i in range(n):
+        if A[i] < MIN[i]:
+            MIN[i] = A[i]
+
+M = str()
+for i in range(n):
+    M += str(MIN[i]) + ' '
+
+f = open('output.txt', 'w')
+print(M, file = f)
+f.close()
 
 
 
